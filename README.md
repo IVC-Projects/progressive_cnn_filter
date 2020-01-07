@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# global-cnn-filter
-RDO-free approach to coordinate the CNNbased in-loop filters to work seamlessly with video encoders
-=======
 # Global cnn filter
 ---
 ---
@@ -25,11 +21,11 @@ paper, we present an RDO-free approach to coordinate the CNNbased
 in-loop filters to work seamlessly with video encoders. 
 
 ## Model
-                      _____     _____           _____
-        raw          | 3x3 |   | 3x3 |         | 3x3 |    ___
-    reconstructed--->| 64  |-->| 64  |-->...-->| 64  |-->|add|-->filtered
-        frame     |  |_____|   |_____|         |_____|    —?—
-                  |______________shotcut___________________|
+                           _____     _____           _____
+             raw          | 3x3 |   | 3x3 |         | 3x3 |    ___
+         reconstructed--->| 64  |-->| 64  |-->...-->| 64  |-->|add|-->filtered
+             frame     |  |_____|   |_____|         |_____|    —?—
+                       |______________shotcut___________________|
 ## Results
 
 |Class|Sequence|AI||LDP||||RA|||
@@ -80,4 +76,3 @@ in-loop filters to work seamlessly with video encoders.
 + AV1
   + encode.c
   
->>>>>>> add code and models
