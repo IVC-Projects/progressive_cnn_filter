@@ -1,6 +1,8 @@
-# Global cnn filter
+# An RDO-Free CNN In-Loop Filtering Approach For Inter Frame Coding
+Dandan Ding, Lingyi Kong, Fengqing Zhu<br>
+
 ---
----
+
 ## Abstract
 Convolutional Neural Network (CNN) has been introduced
 to in-loop filtering in video coding for further performance
@@ -19,6 +21,46 @@ blocks or frames. However, such schemes cannot fundamentally solve
 the problem because the local CNN model is inaccurate. In this
 paper, we present an RDO-free approach to coordinate the CNNbased
 in-loop filters to work seamlessly with video encoders. 
+
+---
+
+## Requirements
++ python 3.7
++ tensorflow >=1.6.0 && <=2.0.0
++ Visual studio >=2013
++ HM 16.9
++ AOM 1.0.0
+
+---
+
+## Usage
+### Trainning 
++ Trainning database : [DIV2K](https://data.vision.ee.ethz.ch/cvl/DIV2K/)
++ Trainning method
+  +  Each frame of DIV2K is encoded using HM16.9 and libaom v1.0.0 with the setting of all loop filter off to obtain the raw reconstructed frames.
+  +  Loss function: $f\left ( \Theta  \right )= \frac{1}{K}\sum_{k=1}^{K}\left \| f_{cnn}\left ( X_k;\Theta - Y_k \right ) \right \|_{2}^{2}$
+  +  When a model is obtained, the image enhanced with this model is added to the training set to continue training, and Repeat again and again ...
+### Testing 
++ HEVC
+  + TEncGop.cpp
++ AV1
+  + encode.c
+
+---
+
+## Experiments and Results
+
+### 1、Average bitrate (kbps) and psnr (db) of using different cnnn in inter in-loop filtering
+
+|Model|LDP||||||||RA||||||||
+|:---:|:---------:|:----:|:-----------------------:|:---------------------:|:--------:|:-------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
+||QP=37||QP=32||QP=27||QP=22||QP=37||QP=32||QP=27||QP=22||
+||bitrate|PSNR|bitrate|PSNR|bitrate|PSNR|bitrate|PSNR|bitrate|PSNR|bitrate|PSNR|bitrate|PSNR|bitrate|PSNR|
+|anchor|923.794|31.806|1860.973|34.495|4246.250|37.278|12540.883|40.295|951.230|32.317|1823.547|34.900|3816.174|37.522|9841.134|40.190|
+|CNN1|927.707|32.098|1840.493|34.765|4162.843|37.511|12442.042|40.496|945.974|32.731|1792.072|35.249|3743.491|37.794|9706.375|40.385|
+
+
+
 
 ## Model
                              _____     _____           _____
@@ -56,23 +98,5 @@ in-loop filters to work seamlessly with video encoders.
 ||Class E|-13:54%|-14:54%|-1:00%|-15:21%|-16:21%|-12:32%|-11:59%|-14:45%|-16:30%|
 ||Average|**-9:87%**|-7:42%|-1:95%|-9:00%|**-9:62%**|-6:09%|-7:02%|-9:27%|**-10:12%**|
 
-## Requirements
-+ python 3.7
-+ tensorflow >=1.6.0 && <=2.0.0
-+ Visual studio >=2013
-+ HM 16.9
-+ AOM 1.0.0
 
-## Usage
-### Trainning 
-+ Trainning database : [DIV2K](https://data.vision.ee.ethz.ch/cvl/DIV2K/)
-+ Trainning method
-  +  Each frame of DIV2K is encoded using HM16.9 and libaom v1.0.0 with the setting of all loop filter off to obtain the raw reconstructed frames.
-  +  Loss function: $f\left ( \Theta  \right )= \frac{1}{K}\sum_{k=1}^{K}\left \| f_{cnn}\left ( X_k;\Theta - Y_k \right ) \right \|_{2}^{2}$
-  +  When a model is obtained, the image enhanced with this model is added to the training set to continue training, and Repeat again and again ...
-### Testing 
-+ HEVC
-  + TEncGop.cpp
-+ AV1
-  + encode.c
   
