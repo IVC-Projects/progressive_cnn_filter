@@ -48,6 +48,16 @@ in-loop filters to work seamlessly with video encoders.
 
 ---
 
+
+## Model
+                             _____     _____           _____
+               raw          | 3x3 |   | 3x3 |         | 3x3 |    ___
+           reconstructed--->| 64  |-->| 64  |-->...-->| 64  |-->|add|-->filtered
+               frame     |  |_____|   |_____|         |_____|    —^—
+                         |______________shotcut___________________|
+
+---
+
 ## Experiments and Results
 
 ### 1、Average bitrate (kbps) and psnr (db) of using different cnnn in inter in-loop filtering
@@ -73,15 +83,9 @@ in-loop filters to work seamlessly with video encoders.
 |27|CNN5|CNN2|
 |22|CNN0/CNN2|CNN0/CNN2|
 
+<br>
 
-
-## Model
-                             _____     _____           _____
-               raw          | 3x3 |   | 3x3 |         | 3x3 |    ___
-           reconstructed--->| 64  |-->| 64  |-->...-->| 64  |-->|add|-->filtered
-               frame     |  |_____|   |_____|         |_____|    —^—
-                         |______________shotcut___________________|
-## Results
+### 3、BD-RATE of our proposed approach compared with previous solutions
 
 |Class|Sequence|AI||LDP||||RA|||
 |:---:|:---------:|:----:|:-----------------------:|:---------------------:|:--------:|:-------:|:--------:|:--------:|:---------:|:--------:|
@@ -110,6 +114,8 @@ in-loop filters to work seamlessly with video encoders.
 ||Class D|-9:80%|-6:19%|-4:74%|-7:95%|-8:96%|-4:77%|-6:48%|-7:90%|-8:92%|
 ||Class E|-13:54%|-14:54%|-1:00%|-15:21%|-16:21%|-12:32%|-11:59%|-14:45%|-16:30%|
 ||Average|**-9:87%**|-7:42%|-1:95%|-9:00%|**-9:62%**|-6:09%|-7:02%|-9:27%|**-10:12%**|
+
+
 
 
   
