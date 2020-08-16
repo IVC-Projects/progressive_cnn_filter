@@ -22,6 +22,9 @@ the problem because the local CNN model is inaccurate. In this
 paper, we present an RDO-free approach to coordinate the CNNbased
 in-loop filters to work seamlessly with video encoders. 
 
+### Examples showing the subjective quality of frames suffering from the over-fifiltering problem.The fifirst line shows the uncompressed frames and the second illustrates the over-fifiltered frames.
+
+
 ---
 
 ## Requirements
