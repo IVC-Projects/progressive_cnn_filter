@@ -24,6 +24,7 @@ in-loop filters to work seamlessly with video encoders.
 
 ### Examples showing the subjective quality of frames suffering from the over-fifiltering problem.The fifirst line shows the uncompressed frames and the second illustrates the over-fifiltered frames.
 
+![](https://github.com/IVC-Projects/progressive_cnn_filter/blob/master/pictures/picture.png)
 
 ---
 
@@ -118,7 +119,11 @@ in-loop filters to work seamlessly with video encoders.
 ||Class E|-13:54%|-14:54%|-1:00%|-15:21%|-16:21%|-12:32%|-11:59%|-14:45%|-16:30%|
 ||Average|**-9:87%**|-7:42%|-1:95%|-9:00%|**-9:62%**|-6:09%|-7:02%|-9:27%|**-10:12%**|
 
+<br>
 
+### 4、Visual quality comparison among different in-loop fifiltering schemes for QP = 37.
+
+![](https://github.com/IVC-Projects/progressive_cnn_filter/blob/master/pictures/picture2.png)
 
 
   
