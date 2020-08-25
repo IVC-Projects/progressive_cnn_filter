@@ -26,7 +26,7 @@ Various Convolutional Neural Network (CNN) structures have been designed for in-
   +  We use [DIV2K](https://data.vision.ee.ethz.ch/cvl/DIV2K/) dataset for CNN training. Each frame of DIV2K is encoded using H.265/HEVC reference software HM16.9 to obtain the raw reconstructed frames. At the encoder, we use the default AI configuration “encoder intra main.cfg” of HM16.9, except that the traditional in-loop filters including Deblocking and SAO are turned off. 
 + Training settings. 
   +  Frames are segmented into 64×64 patches as samples and the batch size is set to 64. We adopt the Adaptive moment estimation (Adam) algorithm for stochastic optimization. To train the direct model CNN0, the initial learning rate is set as 10^-4^. For the transfer learning phase of models CNNi (0 < i ≤ N), the initiallearning rate is set as 10^-5^.During training, the learning rate is adjusted using the step strategy with γ = 0.5. 
-  +  Loss function: $f\left ( \Theta  \right )= \frac{1}{K}\sum_{k=1}^{K}\left \| f_{cnn}\left ( X_k;\Theta - Y_k \right ) \right \|_{2}^{2}$
+  +  Loss function: ![](http://latex.codecogs.com/svg.latex?f(\Theta)=\frac{1}{K}\sum_{k=1}^{K}\||f_{cnn}(X_k;\Theta-Y_k)\||_{2}^{2})
   +  When a model is obtained, the image enhanced with this model is added to the training set to continue training, and Repeat again and again ...
 ### Testing 
 + Testing settings
