@@ -171,7 +171,7 @@ An accurate model is crucial for solving the over-filtering problem. However, th
 	#### <p align="center">Table 6: Performance under IPPPIPPP coding in LDP confifiguration</p>
 	|Method|Anchor||frame skipping||CTU-RDO||Proposed||  
 	|:---:|:---------:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
-	|||Bitrate|PSNR|∆Bitrate|∆PSNR|∆Bitrate|∆PSNR|∆Bitrate|∆PSNR|
+	||Bitrate|PSNR|∆Bitrate|∆PSNR|∆Bitrate|∆PSNR|∆Bitrate|∆PSNR|
 	|Class A|6579.51|32.79|+0.06%|+0.31|-10.07%|+0.52|-0.31%|+0.52|  
 	|Class B|3672.09|33.16|-0.51%|+0.22|-0.44%|+0.38|-0.76%|+0.36|  
 	|Class C|1786.30|30.16|-0.57%|+0.36|-0.60%|+0.52|-0.77%|+0.52|  
