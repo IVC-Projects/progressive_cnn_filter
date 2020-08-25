@@ -161,7 +161,7 @@ An accurate model is crucial for solving the over-filtering problem. However, th
 + Deploy our proposed scheme on different networks. In addition to VDCNN 23, the proposed approach is also implemented using existing networks for verification. Two networks, DSCNN and SEFCNN, are trained using the progressive method and the frame-level RDO is conducted for model selection.
 	> From the results in Fig. 2 we can see that the direct model leads to over-filtering and the results are even worse than the H.265/HEVC anchor. The coding efficiency is improved with CTU-RDO.Furthermore, our proposed approach achieves comparable PSNR to that of CTU-RDO while the bitrate cost is reduced significantly
 
-![](https://github.com/IVC-Projects/progressive_cnn_filter/blob/master/pictures/picture3.png)
+	![](https://github.com/IVC-Projects/progressive_cnn_filter/blob/master/pictures/picture3.png)
 
 	`Figure 2: The proposed approach is implemented using DSCNN and SEFCNN for comparison. In this example, the obtained progressive models are used to test the performance of inter frames in RA confifiguration at QP = 37.`
 
